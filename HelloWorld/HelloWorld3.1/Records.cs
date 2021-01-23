@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HelloWorld3_1
 {
-    //public record Currency(decimal Amount, string CurrencyCode);
+    public record Currency(decimal Amount, string CurrencyCode);
 }
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Text;
 
 namespace HelloWorld3_1
@@ -8,7 +9,6 @@ namespace HelloWorld3_1
     {
         public TargetTypedConditionalExpressions()
         {
-            /*
             int? score = new Random().NextDouble() > 0.5
                 ? 100
                 : null;
@@ -17,7 +17,6 @@ namespace HelloWorld3_1
             IEnumerable<string> myCollection = isReadOnly
                 ? ImmutableList.Create<string>()
                 : new List<string>();
-            */
         }
     }
 }
