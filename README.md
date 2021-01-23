@@ -14,3 +14,13 @@ See the stream here: https://www.youtube.com/watch?v=-iQkrvBBcTA
 
 - https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
 - https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/
+
+## Questions
+
+- I heard will soon have `record class` and `record struct`?
+  - Maybe! In C# 9, we just have `record` which means `record class`. In future versions of C# (e.g. 10) we might get new `record class` and `record struct` syntax; and `record` would continue to be a shorthand for `record class`.
+- Do we get C# 9 automatically when we create a .Net 5.0 project or do we need to do something else?
+  - Yes! We get C# 9 automatically when we create a .NET 5.0 project.
+- Is `Customer == null` equal to `Customer is null`? Which one executes quicker?
+  - They're not quite equal. If `Customer` implements an [operator overload](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/operator-overloading) for equality, `Customer == null` will call that overload. The pattern matching approach, `Customer is null`, is guaranteed to do a real null check, regardless of any operator overload.
+  - For this reason, since C# 7, the recommended way to null checks is to use `Customer is null`. In the absence of overloads, [the performance is identical](https://sharplab.io/#v2:EYLgtghgzgLgpgJwDQxASwDYB8CwAoAAQGYACAgJhIGESBvfExs0ggRgDYTgB7bjEgHIBXDBgCiARyEQMUABRsADCW4BKEgF4AfCs0aSAOxEYA3AybnGxMhy69+w0QAUIMeAgMLWytZp3cSNChDYzM8AF8gA)
